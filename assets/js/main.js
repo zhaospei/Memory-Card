@@ -141,6 +141,12 @@ slider.oninput = function() {
     console.log(lenarr);
 }
 
+for (let i = 0; i < 14; i++){
+  var zz = document.getElementById("full");
+  zz.setAttribute("src", "./assets/img/" + goodGiff[i]);
+  zz.setAttribute("src", "./assets/img/" + badGiff[i]);
+}
+
 
 var sliderdiff = document.getElementById("diff");
 var outputdiff = document.getElementById("diffValue");
