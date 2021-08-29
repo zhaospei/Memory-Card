@@ -1,0 +1,568 @@
+/* Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+/* Reset CSS */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    background-color: #262435;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    padding: 10px 10px;
+}
+.game-container{
+    width: 1200px;
+    height: 575px;
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    z-index: 10000;
+    border-radius: 10px;
+    background-color: #3f3b5e;
+    align-items: center;
+}
+
+.game-timer{
+    width: 250px;
+    height: 300px;
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    z-index: 10000;
+    border-radius: 10px;
+    background-color: #3f3b5e;
+    flex-direction: column;
+    padding: 20px 20px;
+    align-items: center;
+}
+
+.timer, .timer-info{
+    height: 50px;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.timer{
+    font-size: 40px;
+}
+
+.icon-block{
+    width: 50px;
+    height: 50px;
+    background-color:#595292;
+    border-radius: 10px;
+    font-size: 40px;
+    padding: 5px 5px;
+    line-height: 50px;
+}
+
+.step-info, .timer-count{
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.deck{
+    width: 1000px;
+    height: 300px;
+    padding: 20px 20px;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin: auto auto;
+}
+.card-container{
+    background-color: transparent;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.card-container:hover .card{
+    box-shadow:
+        0 0px 1.5px -4px rgba(255, 255, 255, 0.333),
+        0 0px 3.9px -4px rgba(255, 255, 255, 0.436),
+        0 0px 7.9px -4px rgba(255, 255, 255, 0.505),
+        0 0px 15px -4px rgba(255, 255, 255, 0.577),
+        0 0px 30.2px -4px rgba(255, 255, 255, 0.688),
+        0 0px 80px -4px rgba(255, 255, 255, 1)
+    ;
+}
+
+.card{
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    border-radius: 0.5rem;
+}
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.front{
+    background-image: url("/assets/img/card-front.jpg");
+    background-size: 120px auto;
+    box-shadow:
+        0 1.6px 2.2px rgba(0, 0, 0, 0.071),
+        0 4.1px 5.5px rgba(0, 0, 0, 0.102),
+        0 8.3px 11.2px rgba(0, 0, 0, 0.128),
+        0 17.2px 23px rgba(0, 0, 0, 0.159),
+        0 47px 63px rgba(0, 0, 0, 0.23)
+    ;
+}
+.back{
+    background-color: #ecf0f1;
+    padding: 10px 10px;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: 100px auto;
+    transform: rotateY(180deg);
+    box-shadow:
+        0 0px 1.5px -4px rgba(255, 255, 255, 0.333),
+        0 0px 3.9px -4px rgba(255, 255, 255, 0.436),
+        0 0px 7.9px -4px rgba(255, 255, 255, 0.505),
+        0 0px 15px -4px rgba(255, 255, 255, 0.577),
+        0 0px 30.2px -4px rgba(255, 255, 255, 0.688),
+        0 0px 80px -4px rgba(255, 255, 255, 1)
+    ;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.menu-choose{
+    position: relative;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+}
+
+.game-tittle{
+    position: absolute;
+    background-color: #262435;
+    display: inline-block;
+    width: 100vw;
+    height: 100px;
+    color:white;
+    font-size: 50px;
+    text-transform: uppercase;
+    justify-content: space-around;
+}
+
+.name-tittle{
+    position: absolute;
+    left: 100px;
+    width: 500px;
+}
+
+.github-tittle{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    width: 500px;
+}
+.name-tittle .sub-tittle{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    color: #ccc;
+}
+.github-tittle{
+    font-size: 25px;
+}
+
+.github-tittle .sub-tittle{
+    font-size: 20px;
+    color:thistle;
+}
+
+.menu{
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    background-color: #262435;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: white;
+    border-radius: 20px;
+}
+.btn {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+    color: #7f8c8d;
+    background-color: white;
+    padding: 7.5px 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #7f8c8d;
+    color: white; 
+}
+.deck .card.match {
+    visibility: hidden;
+    transition: visibility 0.1s linear;
+}
+
+.op-container{
+    position: absolute;
+    z-index: 10;
+    top: 200px;
+    left: 550px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+}
+
+
+.op-container span{
+    color:teal;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.sizeOp, .diffOp{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+#bcktoMenu{
+    background-color:#7f8c8d;
+    color: white;
+}
+#bcktoMenu:hover{
+    background-color: #262435;
+}
+
+.rangebtn{
+    -webkit-appearance: none;
+    width: 150px;
+    height: 10px;
+    border-radius: 5px; 
+    outline: none;
+    background-color:#ECF0F1;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.rangebtn::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: teal;
+    cursor: pointer;
+}
+
+.sizebtn{
+    font-size: 20px;
+}
+
+.htp-container{
+    position: absolute;
+    z-index: 11;
+    top: 200px;
+    left: 550px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+}
+
+
+.htp-container > span{
+    color:teal;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.htp-main h2{
+    font-size: 20px;
+    color: #7F8C8D;
+    margin-bottom: 10px;
+}
+
+.htp-main h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #B3BABB;
+}
+
+#ok-menu{
+    background-color:#7f8c8d;
+    color: white;
+}
+#ok-menu:hover{
+    background-color: #262435;
+}
+
+.about-container{
+    position: absolute;
+    z-index: 11;
+    top: 200px;
+    left: 550px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+}
+
+
+.about-container > span{
+    color:teal;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.about-main h2{
+    font-size: 19px;
+    color: #7F8C8D;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.about-main img{
+    margin-left: 90px;
+    border-radius: 50%;
+}
+
+#bcktoHome{
+    font-size: 25px;
+    margin: auto auto;
+}
+
+#bcktoHome:hover{
+    background-color: rgb(172, 16, 16);
+}
+#about-menu{
+    background-color:#7f8c8d;
+    color: white;
+}
+#about-menu:hover{
+    background-color: #262435;
+}
+
+.game-timer hr{
+    width: 200px;
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.loser{
+    position: absolute;
+    z-index: 10000;
+    top: 150px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+
+}
+
+.loser img{
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+#bcktoloser{
+    background-color: #ccc;
+}
+
+#bcktoloser:hover{
+    background-color: rgb(138, 17, 17);
+    color: white;
+}
+
+.winner{
+    position: absolute;
+    z-index: 10000;
+    top: 150px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+
+}
+
+.winner img{
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 300px;
+}
+
+#bcktowinner{
+    background-color: #ccc;
+}
+
+#bcktowinner:hover{
+    background-color: rgb(18, 110, 6);
+    color: white;
+}
+
+#play:hover{
+    background-color: tomato;
+}
+
+#options:hover{
+    background-color: teal;
+}
+#how-to-play:hover{
+    background-color: rgb(42, 153, 180);
+}
+#about:hover{
+    background-color: rgb(90, 9, 79);
+}
+
+.op-container span{
+    color: teal;
+}
+.htp-container span{
+    color: rgb(42, 153, 180);
+}
+.about-container span{
+    color: rgb(90, 9, 79);
+}
+
+.emote{
+    width: 250px;
+    height: 300px;
+    display: none;
+    position: absolute;
+    top: 400px;
+    margin-top: 20px;
+    right: 10px;
+    z-index: 10000;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 20px 20px;
+    align-items: center;
+}
+
+.emote h1{
+    position: absolute;
+    z-index: 100000;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    width: max-content;
+    font-size: 20px;
+}
+
+.emote img{
+    position:absolute;
+    top: 50px;
+    right: 10px;
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,144 @@
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--  Sao toàn vào xem Source Code thế lmao =)) 
+    Version: 1.0.2 StartTime: 2:48PM 27/08/2021
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOXICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/gif" sizes="16x16">
+    <title>Memory Card</title>
+</head>
+<body>
+    <section class="menu-choose">
+        <div class="game-tittle">
+            <div class="name-tittle">
+                <p class="sub-tittle">memory card</p>
+                <p class="main-tittle">memory Card </p>
+            </div>
+            <div class="github-tittle">
+                <a href= "https://github.com/taekinotaking" class="main-tittle"><i class='bx bxl-github'></i>taekinotaking</a>
+                <p class="sub-tittle">Version 1.0.2</p>
+            </div>
+
+        </div>
+        <div class="menu">
+            <div id="play" class="btn">Play</div>
+            <div id="options" class= "btn">options</div>
+            <div id="how-to-play" class="btn">how to play</div>
+            <div id="about" class= "btn">about</div>
+        </div>
+        <div class="op-container">
+            <span>Options</span>
+            <div class="sizeOp">
+                <div> size </div>
+                <div class="sizeOp_item">
+                    <input class="rangebtn" type = "range" name="size" id="size" min="1" max="5" value="1">
+                    <div class="sizebtn" id="sizeValue" style:"left: 0rem;">
+                        2 x 3
+                    </div>
+                </div>
+            </div>
+            <div class="diffOp">
+                <div> difficulty </div>
+                <div class="diffOp_item">
+                    <input class="rangebtn" type = "range" name="diff" id="diff" min="1" max="3" value="1" >
+                    <div class="sizebtn" id="diffValue" style:"left: 0rem; ">
+                        Easy
+                    </div>
+                </div>
+            </div>
+            <div class="btn" id = "bcktoMenu">
+                Save & Back
+            </div>
+        </div>
+        <div class="htp-container">
+            <span>HOW TO PLAY</span>
+            <div class="htp-main">
+                <h2>HOW TO WIN?</h2>
+                <h3>Destroy <span style="color: rgb(8, 133, 45);">all of Cards </span></h3>
+                <h2>HOW TO destroy it?</h2>
+                <h3>Choose <span style="color: rgb(10, 126, 116);"> Two Cards </span> have <span style="color: rgb(180, 31, 26);"> similar </span> picture </h3>
+            </div>
+            <div class="btn" id = "ok-menu">
+                oke
+            </div>
+        </div>
+        <div class="about-container">
+            <span>ABOUT</span>
+            <div class="about-main">
+                <h2> THIS GAME IS MADE BY <span style="color: rgb(33, 121, 172);">TAEKI </span></h2>
+                <h2> <span style="color: rgb(33, 172, 126);">AUGUST </span> <span style="color: rgb(233, 213, 39);">2021 </span></h2>
+                <a href="https://github.com/taekinotaking">
+                    <img src="./assets/img/profile.jpg" width="100px" height="100px">
+                </a>
+            </div>
+            <div class="btn" id = "about-menu">
+                BACK
+            </div>
+        </div>
+    </section>
+    <section class="game-container">
+        <div class="deck">
+
+        </div>
+    </section>
+    <section class="game-timer">
+        <div class="timer">
+            <div class="icon-block clock-icon">
+                <i class='bx bx-time' ></i> 
+            </div>
+            <div class="timer-count">
+                03: 30
+            </div>
+        </div>
+        <hr>
+        <div class="timer-info">
+            <div class="icon-block point-icon">
+                <i class='bx bxs-category-alt'></i>
+            </div>  
+            <div class="step-info">
+                100 steps
+            </div>          
+        </div>
+        <hr>
+        <div class="btn" id = "bcktoHome">
+            FF
+        </div>
+    </section>
+
+    <section class="emote">
+        <h1 id="tt"> Good Luck!</h1>
+        <div class="gifemote">
+            <img id="gg" src="">
+        </div>
+    </section>
+
+    <section class = "loser">   
+        <h1> YOUR ARE 
+            <span style="color: rgb(138, 17, 17)">LOSER</span>!
+        </h1>
+        <img src = "./assets/img/giphy.gif" alt="LOSER">
+        <div class="btn" id = "bcktoloser">
+            Again, Loser?
+        </div>
+    </section>
+    <section class = "winner">   
+        <h1> LUCKILY, YOU 
+            <span style="color: rgb(18, 110, 6)">WIN</span>!
+        </h1>
+        <img src = "./assets/img/win.gif" alt="LOSER">
+        <div class="btn" id = "bcktowinner">
+            Again, lucky man?
+        </div>
+    </section>
+    <!-- MAIN JS -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
