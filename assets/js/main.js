@@ -133,6 +133,8 @@ slider.oninput = function() {
     console.log(lenarr);
 }
 
+
+
 for (let i = 0; i < 11; i++){
   const lizTag = document.createElement('IMG');
   lizTag.classList.add('fulll');
@@ -427,10 +429,10 @@ function good(){
   opp.style.display = 'flex';
 }
 
-$(document).ready(function() {
+function FunctionLoad() {
   var ac = document.getElementById("loading");
   ac.classList.add("activee");
   setTimeout(function(){
       document.getElementById("loading").style.display = 'none';
   }, 1000);
-});
+}
