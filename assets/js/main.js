@@ -53,9 +53,6 @@ const goodGiff =[
 "g9.gif",
 "g10.gif",
 "g11.gif",
-"g12.gif",
-"g13.gif",
-"g14.gif",
 ];
 
 const badGiff =[
@@ -67,12 +64,6 @@ const badGiff =[
 "b6.gif",
 "b7.gif",
 "b8.gif",
-"b9.gif",
-"b10.gif",
-"b11.gif",
-"b12.gif",
-"b13.gif",
-"b14.gif",
 ];
 
 const goodE = [
@@ -129,6 +120,7 @@ var timeCounter = document.getElementsByClassName("timer-count")[0];
 var slider = document.getElementById("size");
 var output = document.getElementById("sizeValue");
 var movesCount = document.getElementsByClassName("step-info")[0];
+var cc = document.getElementById("full");
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     output.innerHTML = sizev[this.value - 1];
@@ -141,10 +133,17 @@ slider.oninput = function() {
     console.log(lenarr);
 }
 
-for (let i = 0; i < 14; i++){
-  var zz = document.getElementById("full");
-  zz.setAttribute("src", "./assets/img/" + goodGiff[i]);
-  zz.setAttribute("src", "./assets/img/" + badGiff[i]);
+for (let i = 0; i < 11; i++){
+  const lizTag = document.createElement('IMG');
+  lizTag.classList.add('fulll');
+  lizTag.setAttribute("src", "./assets/img/" + goodGiff[i]);
+  cc.appendChild(lizTag)
+}
+for (let i = 0; i < 8; i++){
+  lizTag = document.createElement('IMG');
+  lizTag.classList.add('fulll');
+  lizTag.setAttribute("src", "./assets/img/" + badGiff[i]);
+  cc.appendChild(lizTag)
 }
 
 
@@ -411,7 +410,7 @@ setInterval(function() {
 function bad(){
   let randombad = Math.floor(Math.random() * 10);
   document.getElementById("tt").innerHTML= badE[randombad] + "!";
-  randombad = Math.floor(Math.random() * 13);
+  randombad = Math.floor(Math.random() * 7);
   var jj = document.getElementById("gg");
   jj.setAttribute("src", "./assets/img/" + badGiff[randombad]);
   var opp = document.getElementsByClassName("emote")[0];
@@ -421,7 +420,7 @@ function bad(){
 function good(){
   let randomgood = Math.floor(Math.random() * 10);
   document.getElementById("tt").innerHTML= goodE[randomgood] + "!";
-  randomgood = Math.floor(Math.random() * 13);
+  randomgood = Math.floor(Math.random() * 9);
   var zz = document.getElementById("gg");
   zz.setAttribute("src", "./assets/img/" + goodGiff[randomgood]);
   var opp = document.getElementsByClassName("emote")[0];
