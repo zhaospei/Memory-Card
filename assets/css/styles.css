@@ -142,7 +142,7 @@ li{
     backface-visibility: hidden;
 }
 .front{
-    background-image: url("/assets/img/card-front.jpg");
+    background-image: url("https://github.com/taekinotaking/Memory-Card/blob/main/assets/img/card-front.jpg");
     background-size: 120px auto;
     box-shadow:
         0 1.6px 2.2px rgba(0, 0, 0, 0.071),
