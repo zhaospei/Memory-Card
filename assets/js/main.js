@@ -426,3 +426,11 @@ function good(){
   var opp = document.getElementsByClassName("emote")[0];
   opp.style.display = 'flex';
 }
+
+$(document).ready(function() {
+  var ac = document.getElementById("loading");
+  ac.classList.add("activee");
+  setTimeout(function(){
+      document.getElementById("loading").style.display = 'none';
+  }, 1000);
+});

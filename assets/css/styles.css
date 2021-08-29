@@ -570,3 +570,29 @@ li{
 #full{
     display: none;
 }
+
+#loading{
+    width: 100vw;
+    height: 100vh;
+    position:absolute;
+    z-index: 10000000;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: opacity 1000ms;
+    transition: opacity 1000ms;
+    opacity: 1;
+}
+
+#loading.activee{
+    opacity: 0;
+}
+
+
+.loading-content{
+    margin: auto auto;
+}
+
+.loading-content img{
+    width: 100px;
+}
