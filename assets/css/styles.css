@@ -142,7 +142,8 @@ li{
     backface-visibility: hidden;
 }
 .front{
-    background-image: url("../img/card-front.jpg");
+    background-color: #262435;
+    background-image: url("../img/face-front.jpg");
     background-size: 120px auto;
     box-shadow:
         0 1.6px 2.2px rgba(0, 0, 0, 0.071),
@@ -182,7 +183,7 @@ li{
 
 .game-tittle{
     position: absolute;
-    background-color: #262435;
+    background-color: #2a293500;
     display: inline-block;
     width: 100vw;
     height: 100px;
@@ -216,7 +217,7 @@ li{
 
 .github-tittle .sub-tittle{
     font-size: 20px;
-    color:thistle;
+    color:#ccc;
 }
 
 .menu{
@@ -229,8 +230,8 @@ li{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px 50px;
+    justify-content: space-around;
+    padding: 30px 40px;
     border-style: solid;
     border-width: 10px;
     border-color: white;
@@ -246,10 +247,8 @@ li{
     border: none;
     color: #7f8c8d;
     background-color: white;
-    padding: 7.5px 30px;
+    padding: 10px 30px;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    margin-top: 20px;
     cursor: pointer;
 }
 
@@ -316,6 +315,7 @@ li{
     transition: opacity .2s;
 }
 
+
 .rangebtn::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -328,6 +328,9 @@ li{
 
 .sizebtn{
     font-size: 20px;
+}
+.soundOP{
+    display: flex;
 }
 
 .htp-container{
@@ -357,7 +360,7 @@ li{
 }
 
 .htp-main h2{
-    font-size: 20px;
+    font-size: 23px;
     color: #7F8C8D;
     margin-bottom: 10px;
 }
@@ -498,6 +501,7 @@ li{
 }
 
 #bcktowinner{
+    margin-top: 20px;
     background-color: #ccc;
 }
 
@@ -506,15 +510,18 @@ li{
     color: white;
 }
 
-#play:hover{
-    background-color: tomato;
-}
-
 #options:hover{
     background-color: teal;
 }
+
+#play:hover{
+    background-color: tomato;
+}
 #how-to-play:hover{
     background-color: rgb(42, 153, 180);
+}
+#ranking:hover{
+    background-color: brown;
 }
 #about:hover{
     background-color: rgb(90, 9, 79);
@@ -576,17 +583,26 @@ li{
     height: 100vh;
     position:absolute;
     z-index: 10000000;
-    background-color: white;
+    background-color: #262435;
     display: flex;
     justify-content: center;
-    -webkit-transition: opacity 1000ms;
-    transition: opacity 1000ms;
-    opacity: 1;
+}
+#loading.activee{
+    animation-name: myAnimation;
+    animation-duration: 500ms; 
 }
 
-#loading.activee{
-    opacity: 0;
-}
+@keyframes myAnimation{
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
 
 
 .loading-content{
@@ -595,4 +611,343 @@ li{
 
 .loading-content img{
     width: 100px;
+}
+#ranking{
+    display: none;
+}
+
+.ranking-container{
+    position: absolute;
+    z-index: 1000000000;
+    top: 200px;
+    left: 550px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 25px;
+}
+
+.ranking-container span{
+    color:brown;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+#ranking-menu{
+    background-color:#7f8c8d;
+    color: white;
+}
+#ranking-menu:hover{
+    background-color: #262435;
+}
+
+#returntoMenu{
+    background-color:#7f8c8d;
+    color: white;
+}
+#returntoMenu:hover{
+    background-color: #ca1e1e;
+}
+#bcktoMenu{
+    background-color:#7f8c8d;
+    color: white;
+}
+#bcktoMenu:hover{
+    background-color: seagreen;
+}
+
+.chall-container{
+    position: absolute;
+    z-index: 100;
+    top: 200px;
+    left: 550px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+}
+
+
+.chall-container > span{
+    color:tomato;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+#chall-back{
+    background-color:#7f8c8d;
+    color: white;
+}
+#chall-back:hover{
+    background-color: #ca1e1e;
+}
+#chall-go{
+    background-color:#7f8c8d;
+    color: white;
+}
+#chall-go:hover{
+    background-color: seagreen;
+}
+
+.chall-container p{
+    color: rgb(119, 119, 119);
+    font-size: 30px;
+}
+
+.loser-chall{
+    position: absolute;
+    z-index: 10000;
+    top: 150px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+}
+
+.loser-chall img{
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.loser-chall h1{
+    font-size: 37px;
+}
+
+#back-chall{
+    background-color: #ccc;
+    margin-top: 30px;
+}
+
+#back-chall:hover{
+    background-color: rgb(138, 17, 17);
+    color: white;
+}
+
+.winner-chall{
+    position: absolute;
+    z-index: 10000;
+    top: 150px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+
+}
+
+.winner-chall img{
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 300px;
+}
+
+.winner-chall h1{
+    font-size: 37px;
+}
+
+#next-chall{
+    margin-top: 20px;
+    background-color: #ccc;
+}
+
+#next-chall:hover{
+    background-color: rgb(18, 110, 6);
+    color: white;
+}
+
+.final-chall{
+    position: absolute;
+    z-index: 10000;
+    top: 150px;
+    left: 400px;
+    width: 700px;
+    height: 500px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+
+}
+
+.final-chall img{
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 300px;
+}
+
+.final-chall h1{
+    font-size: 37px;
+}
+
+#end-chall{
+    margin-top: 20px;
+    background-color: #ccc;
+}
+
+#end-chall:hover{
+    background-color: rgb(18, 110, 6);
+    color: white;
+}
+
+.round-count{
+    position: absolute;
+    z-index: 10000;
+    top: 80px;
+    right: 300px;
+    display: none;
+    color: white;
+    font-size: 30px;
+}
+
+.ff{
+    position: absolute;
+    z-index: 1000000;
+    top: 200px;
+    left: 550px;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 30px;
+}
+
+
+.ff > span{
+    color:tomato;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+#ff-back{
+    background-color: #ccc;
+    margin-top: 30px;
+}
+
+#ff-back:hover{
+    background-color: rgb(18, 110, 6);
+    color: white;
+}
+
+#ff-go{
+    margin-top: 20px;
+    background-color: #ccc;
+}
+
+#ff-go:hover{
+    background-color: rgb(138, 17, 17);
+    color: white;
+}
+
+.rangesound{
+    width: 200px;
+}
+
+.theme-item{
+    display: flex;
+}
+
+.themeOP h3{
+    color:rgb(18, 110, 6);
+    font-size: 20px;
+}
+
+.theme-chon{
+    font-size: 25px;
+    width: 10px;
+}
+
+.hello{
+    position: absolute;
+    z-index: 10000;
+    top: 150px;
+    left: 450px;
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    border-radius: 20px;
+    color: #262435;
+    font-size: 16px;
+}
+
+
+.hello > span{
+    color:teal;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#hello-menu{
+    background-color: #ccc;
+    margin-top: 30px;
+}
+
+#hello-menu:hover{
+    background-color: rgb(18, 110, 6);
+    color: white;
+}
+
+.feedback{
+    position: absolute;
+    z-index: 10000;
+    bottom: 0px;
+    right: 2px;
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-radius: 10px;
+    color: #262435;
+    font-size: 20px;
 }

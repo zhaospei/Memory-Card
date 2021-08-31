@@ -1,6 +1,6 @@
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++-->
 <!--  Sao toàn vào xem Source Code thế lmao =)) 
-    Version: 1.0.2 StartTime: 2:48PM 27/08/2021
+    Version: 2.1.2 StartTime: 3:12PM 29/08/2021
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++-->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,30 +12,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="./assets/img/favicon.png" type="image/gif" sizes="16x16">
     <title>Memory Card</title>
 </head>
 <body onload="FunctionLoad()">
+    <div id="particles-js"> </div>
     <section id= "loading">
         <div class="loading-content">
-            <img src="./assets/img/Preloader_3.gif">
+            <img src="./assets/img/loading.gif">
         </div>
     </section>
     <section class="menu-choose">
         <div class="game-tittle">
             <div class="name-tittle">
-                <p class="sub-tittle">memory card</p>
                 <p class="main-tittle">memory Card </p>
+                <p class="sub-tittle">memory card</p>
             </div>
             <div class="github-tittle">
                 <a href= "https://github.com/taekinotaking" class="main-tittle"><i class='bx bxl-github'></i>taekinotaking</a>
-                <p class="sub-tittle">Version 1.0.2</p>
+                <p class="sub-tittle">Version 2.1.2</p>
             </div>
 
         </div>
         <div class="menu">
-            <div id="play" class="btn">Play</div>
-            <div id="options" class= "btn">options</div>
+            <div id="options" class= "btn">Single Mode</div>
+            <div id="play" class="btn">challenge</div>
+            <div id="ranking" class= "btn">Settings</div>
             <div id="how-to-play" class="btn">how to play</div>
             <div id="about" class= "btn">about</div>
         </div>
@@ -59,8 +62,30 @@
                     </div>
                 </div>
             </div>
-            <div class="btn" id = "bcktoMenu">
-                Save & Back
+            <div class="buttom-choose">
+                <div class="btn" id = "bcktoMenu">
+                    Go!
+                </div>
+                <div class="btn" id = "returntoMenu">
+                    Back
+                </div>
+            </div>
+        </div>
+        <div class="chall-container">
+            <span>challenge</span>
+            <div class="help-text">
+                <p>You will play </p>
+                <p><span style="color:rgb(82, 82, 7)">15</span> rounds from </p> 
+                <p> <span style="color:rgb(8, 77, 25)">easy</span> to <span style="color:rgb(167, 21, 21)">difficult</span>!</p>
+            </div>
+
+            <div class="buttom-choose">
+                <div class="btn" id = "chall-go">
+                    Go!
+                </div>
+                <div class="btn" id = "chall-back">
+                    Back
+                </div>
             </div>
         </div>
         <div class="htp-container">
@@ -75,10 +100,22 @@
                 oke
             </div>
         </div>
+        <div class="ranking-container">
+            <span>Settings</span>
+            <div class="soundOP">
+                <i class='bx bxs-volume-full' style="font-size:30px"></i>
+                <div class="sound_item">
+                    <input class="rangesound" type = "range" name="sound" id="sound" min="0" max="10" value="10" >
+                </div>
+            </div>
+            <div class="btn" id = "ranking-menu">
+                return
+            </div>
+        </div>
         <div class="about-container">
             <span>ABOUT</span>
             <div class="about-main">
-                <h2> THIS GAME IS MADE BY <span style="color: rgb(33, 121, 172);">TAEKI </span></h2>
+                <h2> THIS GAME IS MADE BY <span style="font-size:larger; color: rgb(33, 121, 172);">TAEKI </span></h2>
                 <h2> <span style="color: rgb(33, 172, 126);">AUGUST </span> <span style="color: rgb(233, 213, 39);">2021 </span></h2>
                 <a href="https://github.com/taekinotaking">
                     <img src="./assets/img/profile.jpg" width="100px" height="100px">
@@ -89,6 +126,22 @@
             </div>
         </div>
     </section>
+    <div class="hello">
+        <span>Hii, What's NEW?</span>
+        <div style="color:rgb(81, 111, 112); font-size: 16px;">IN THIS <span style="color: chocolate;">VERSION 2.1.2 </span>, WE IMPROVED SOME THINGS: </div>
+        + IMPROVED LOADING GAME! </br>
+        + FIXED BUGS WHEN LOSE AND WIN HAPPEN AT SAME TIME! </br>
+        + FIXED BUGS WHEN CHANGE FROM BIG SIZE TO SMALL SIZE! </br>
+        + ADD NEW MODE CHALLENGE! </br>
+        + ADD SOME SOUNDS EFFECTS!</br>
+        + ADD COOL EFFECTS BACKGROUND!</br>
+        </br>
+        <div style="color: crimson;">BECAUSE WE ADDED SOUNDS, YOU SHOULD BE CAREFUL!</div>
+        <p style="color:cadetblue; font-size: 16px;">SEE YAA! </p>
+        <div class="btn" id = "hello-menu">
+            GOOOOOO !
+        </div>
+    </div>
     <section class="game-container">
         <div class="deck">
 
@@ -129,7 +182,7 @@
         <h1> YOUR ARE 
             <span style="color: rgb(138, 17, 17)">LOSER</span>!
         </h1>
-        <img src = "./assets/img/giphy.gif" alt="LOSER">
+        <img src = "./assets/img/lose.gif" alt="LOSER">
         <div class="btn" id = "bcktoloser">
             Again, Loser?
         </div>
@@ -140,12 +193,63 @@
         </h1>
         <img src = "./assets/img/win.gif" alt="LOSER">
         <div class="btn" id = "bcktowinner">
-            Again, lucky man?
+            Back to Home
         </div>
     </section>
-    <div id="full">
-    </div>
+    <section class = "loser-chall">   
+        <h1>  
+            <span style="color: rgb(138, 17, 17)">LLLLOOOSSSSSEEERRRR</span>!
+        </h1>
+        <img src = "./assets/img/lose.gif" alt="LOSER">
+        <div class="btn" id = "back-chall">
+            Try again, Loser?
+        </div>
+    </section>
+    <section class = "winner-chall">   
+        <h1> LUCKILY, YOU 
+            <span style="color: rgb(18, 110, 6)">passed</span>!
+        </h1>
+        <img src = "./assets/img/win.gif" alt="LOSER">
+        <div class="btn" id = "next-chall">
+            Next level, idol?
+        </div>
+    </section>
+
+    <section class = "final-chall">   
+        <h1> OHHHHHHH, YOU 
+            <span style="color: rgb(18, 110, 6)">WINNNNNNNNNNNNN!</span>!
+        </h1>
+        <img src = "./assets/img/final.gif" alt="LOSER">
+        <div class="btn" id = "end-chall">
+            Again, Miss Memory Card?
+        </div>
+    </section>
+
+    <section class="round-count">
+        2/15
+    </section>
+    <section class="ff">
+        <span> なに </span>
+        <span>Are you sure?</span>
+            <div class="buttom-choose">
+                <div class="btn" id = "ff-go">
+                    Yes
+                </div>
+                <div class="btn" id = "ff-back">
+                    No
+                </div>
+            </div>
+    </section>
+    <section class="feedback">
+        <a href="https://taekinotaking.github.io/profile/#contact-container" target="_blank">FEEDBACK </a>
+    </section>
     <!-- MAIN JS -->
     <script src="./assets/js/main.js"></script>
+    <script src=
+        "./particles.js">
+    </script>
+    <script src=
+        "./demo/js/app.js">
+    </script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+#particles-js {
+    position: absolute;
+}
+.particles-js-canvas-el{
+    width: 1530px !important;
+    height: 710px !important;
+}
