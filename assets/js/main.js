@@ -118,7 +118,7 @@ const badE = [
   "Don't be such an ass",
 ];
 
-const diffv = ['Easy', 'Normal', 'Difficult'];
+const diffv = ['EASY', 'NORMAL', 'HARD'];
 const sizev = ['2 x 3', '3 x 4', '4 x 5', '4 x 6', '4 x 8'];
 const diffarr = [4, 3, 2];
 const hsize = [2, 3, 4, 4, 4];
@@ -285,6 +285,8 @@ document.getElementById("hello-menu").addEventListener("click",
     function(){
         var op_backtomenu = document.getElementsByClassName("hello")[0];
         op_backtomenu.style.display = 'none';
+        var op_menuchoose = document.getElementsByClassName("menu-choose")[0]
+        op_menuchoose.style.display = 'block';
         backgroundsound.play();
         inback = setInterval(function(){
           backgroundsound.play();

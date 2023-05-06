@@ -4,6 +4,7 @@
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,120 +17,144 @@
     <link rel="icon" href="./assets/img/favicon.png" type="image/gif" sizes="16x16">
     <title>Memory Card</title>
 </head>
+
 <body onload="FunctionLoad()">
-    <div id="particles-js"> </div>
-    <section id= "loading">
+    <div class="game-title">
+        <div class="name-title">
+            <p class="main-title">Memory Card </p>
+        </div>
+        <div class="github-title">
+            <a href="https://github.com/zhaospei" class="main-title"><i class='bx bxl-github'></i>Tuan-Dung Bui</a>
+            <p class="sub-title">Version 3.0.5</p>
+        </div>
+
+    </div>
+    <section id="loading">
         <div class="loading-content">
             <img src="./assets/img/loading.gif">
         </div>
     </section>
+
     <section class="menu-choose">
-        <div class="game-tittle">
-            <div class="name-tittle">
-                <p class="main-tittle">memory Card </p>
-                <p class="sub-tittle">memory card</p>
-            </div>
-            <div class="github-tittle">
-                <a href= "https://github.com/taekinotaking" class="main-tittle"><i class='bx bxl-github'></i>taekinotaking</a>
-                <p class="sub-tittle">Version 2.1.2</p>
-            </div>
 
-        </div>
-        <div class="menu">
-            <div id="options" class= "btn">Single Mode</div>
-            <div id="play" class="btn">challenge</div>
-            <div id="ranking" class= "btn">Settings</div>
-            <div id="how-to-play" class="btn">how to play</div>
-            <div id="about" class= "btn">about</div>
-        </div>
-        <div class="op-container">
-            <span>Options</span>
-            <div class="sizeOp">
-                <div> size </div>
-                <div class="sizeOp_item">
-                    <input class="rangebtn" type = "range" name="size" id="size" min="1" max="5" value="1">
-                    <div class="sizebtn" id="sizeValue" style:"left: 0rem;">
-                        2 x 3
+        <div class="menu center-screen">
+            <div id="options" class="menu-btn">Single Mode</div>
+            <div id="play" class="menu-btn">challenge</div>
+            <div id="ranking" class="menu-btn">Settings</div>
+            <div id="how-to-play" class="menu-btn">how to play</div>
+            <div id="about" class="menu-btn">about</div>
+            <div class="op-container menu-banner">
+                <span>Options</span>
+                <div class="sizeOp">
+                    <div> SIZE </div>
+                    <div class="sizeOp_item">
+                        <input class="rangebtn" type="range" name="size" id="size" min="1" max="5" value="1">
+                        <div class="sizebtn" id="sizeValue" style:"left: 0rem;">
+                            2 x 3
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="diffOp">
-                <div> difficulty </div>
-                <div class="diffOp_item">
-                    <input class="rangebtn" type = "range" name="diff" id="diff" min="1" max="3" value="1" >
-                    <div class="sizebtn" id="diffValue" style:"left: 0rem; ">
-                        Easy
+                <div class="diffOp">
+                    <div> DIFFICULTY </div>
+                    <div class="diffOp_item">
+                        <input class="rangebtn" type="range" name="diff" id="diff" min="1" max="3" value="1">
+                        <div class="sizebtn" id="diffValue" style:"left: 0rem; ">
+                            EASY
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="buttom-choose">
-                <div class="btn" id = "bcktoMenu">
-                    Go!
-                </div>
-                <div class="btn" id = "returntoMenu">
-                    Back
-                </div>
-            </div>
-        </div>
-        <div class="chall-container">
-            <span>challenge</span>
-            <div class="help-text">
-                <p>You will play </p>
-                <p><span style="color:rgb(82, 82, 7)">15</span> rounds from </p> 
-                <p> <span style="color:rgb(8, 77, 25)">easy</span> to <span style="color:rgb(167, 21, 21)">difficult</span>!</p>
-            </div>
+                <div class=" buttom-choose">
+                            <div class="btn" id="bcktoMenu">
+                                Go!
+                            </div>
+                            <div class="btn" id="returntoMenu">
+                                Back
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="buttom-choose">
-                <div class="btn" id = "chall-go">
-                    Go!
+                    <div class="chall-container menu-banner">
+                        <span>challenge</span>
+                        <div class="menu-banner-content">
+                            <div class="help-text">
+                                <h3>YOU WILL PLAY 
+                                <span style="color:rgb(82, 82, 7)">15</span> ROUNDS FROM 
+                                 <span style="color:rgb(8, 77, 25)">EASY</span> TO <span
+                                        style="color:rgb(167, 21, 21)">DIFFICUL</span>!</h3>
+                            </div>
+                        </div>
+                        <div class="buttom-choose">
+                            <div class="btn" id="chall-go">
+                                Go!
+                            </div>
+                            <div class="btn" id="chall-back">
+                                Back
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="htp-container menu-banner">
+                        <span>HOW TO PLAY?</span>
+                        <div class="menu-banner-content">
+                            <div class="htp-main">
+                                <h3>HOW TO WIN?</h3>
+                                <p> DESTROY <span style="color: rgb(8, 133, 45);"> ALL OF CARDS. </span></p>
+                                <h3>HOW TO DESTROY IT?</h3>
+                                <p>CHOOSE <span style="color: rgb(10, 126, 116);"> TWO CARDS </span> HAVE <span
+                                        style="color: rgb(180, 31, 26);"> SIMILAR </span> PICTURE. </p>
+                            </div>
+                        </div>
+                        <div class="btn" id="ok-menu">
+                            oke
+                        </div>
+                    </div>
+
+                    <div class="ranking-container menu-banner">
+                        <span>Settings</span>
+                        <div class="soundOP">
+                            <i class='bx bxs-volume-full' style="font-size:30px"></i>
+                            <div class="sound_item">
+                                <input class="rangesound" type="range" name="sound" id="sound" min="0" max="10"
+                                    value="10">
+                            </div>
+                        </div>
+                        <div class="btn" id="ranking-menu">
+                            return
+                        </div>
+                    </div>
+
+                    <div class="about-container menu-banner">
+                        <span>ABOUT</span>
+                        <div class="menu-banner-content">
+                            <div class="about-main">
+                                <p> THIS GAME WAS MADE BY <span style="font-size:larger; color: rgb(33, 121, 172);">TAEKI
+                                    </span>
+                                IN <span style="color: rgb(33, 172, 126);">AUGUST </span> <span
+                                        style="color: rgb(233, 213, 39);">2021.</span></p>
+                                <div class="about-link">
+                                    <a href="https://github.com/zhaospei">
+                                        <img src="./assets/img/profile.jpg" width="100px" height="100px">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn" id="about-menu">
+                            BACK
+                        </div>
+                    </div>
                 </div>
-                <div class="btn" id = "chall-back">
-                    Back
-                </div>
-            </div>
-        </div>
-        <div class="htp-container">
-            <span>HOW TO PLAY</span>
-            <div class="htp-main">
-                <h2>HOW TO WIN?</h2>
-                <h3>Destroy <span style="color: rgb(8, 133, 45);">all of Cards </span></h3>
-                <h2>HOW TO destroy it?</h2>
-                <h3>Choose <span style="color: rgb(10, 126, 116);"> Two Cards </span> have <span style="color: rgb(180, 31, 26);"> similar </span> picture </h3>
-            </div>
-            <div class="btn" id = "ok-menu">
-                oke
-            </div>
-        </div>
-        <div class="ranking-container">
-            <span>Settings</span>
-            <div class="soundOP">
-                <i class='bx bxs-volume-full' style="font-size:30px"></i>
-                <div class="sound_item">
-                    <input class="rangesound" type = "range" name="sound" id="sound" min="0" max="10" value="10" >
-                </div>
-            </div>
-            <div class="btn" id = "ranking-menu">
-                return
-            </div>
-        </div>
-        <div class="about-container">
-            <span>ABOUT</span>
-            <div class="about-main">
-                <h2> THIS GAME IS MADE BY <span style="font-size:larger; color: rgb(33, 121, 172);">TAEKI </span></h2>
-                <h2> <span style="color: rgb(33, 172, 126);">AUGUST </span> <span style="color: rgb(233, 213, 39);">2021 </span></h2>
-                <a href="https://github.com/taekinotaking">
-                    <img src="./assets/img/profile.jpg" width="100px" height="100px">
-                </a>
-            </div>
-            <div class="btn" id = "about-menu">
-                BACK
-            </div>
-        </div>
     </section>
-    <div class="hello">
-        <span>Hii, I'm Taeki!</span>
-        <p style="color:cadetblue; font-size: 30px;">SEE YA! </p>
-        <div class="btn" id = "hello-menu">
+    <div class="hello banner">
+        <div class="hello-content">
+            <h3>What's <span style="font-size: 40px;">NEW?</span></h3>
+            <p> Hiii, I'm <span style="color:rgb(14 165 233)">Zhao</span>!
+            <p>
+
+            </p>In this <span style="color:rgb(245 158 11)">3.0.5</span>, we provided you some <span
+                style="color:rgb(244 63 94)">intersting thing</span>!</p>
+
+        </div>
+        <div class="btn" id="hello-menu">
             GOOOOOO !
         </div>
     </div>
@@ -141,7 +166,7 @@
     <section class="game-timer">
         <div class="timer">
             <div class="icon-block clock-icon">
-                <i class='bx bx-time' ></i> 
+                <i class='bx bx-time'></i>
             </div>
             <div class="timer-count">
                 03: 30
@@ -151,13 +176,13 @@
         <div class="timer-info">
             <div class="icon-block point-icon">
                 <i class='bx bxs-category-alt'></i>
-            </div>  
+            </div>
             <div class="step-info">
                 100 steps
-            </div>          
+            </div>
         </div>
         <hr>
-        <div class="btn" id = "bcktoHome">
+        <div class="btn" id="bcktoHome">
             FF
         </div>
     </section>
@@ -169,49 +194,49 @@
         </div>
     </section>
 
-    <section class = "loser">   
-        <h1> YOUR ARE 
+    <section class="loser banner">
+        <h1> YOUR ARE
             <span style="color: rgb(138, 17, 17)">LOSER</span>!
         </h1>
-        <img src = "./assets/img/lose.gif" alt="LOSER">
-        <div class="btn" id = "bcktoloser">
+        <img src="./assets/img/lose.gif" alt="LOSER">
+        <div class="btn" id="bcktoloser">
             Again, Loser?
         </div>
     </section>
-    <section class = "winner">   
-        <h1> LUCKILY, YOU 
+    <section class="winner banner">
+        <h1> LUCKILY, YOU
             <span style="color: rgb(18, 110, 6)">WIN</span>!
         </h1>
-        <img src = "./assets/img/win.gif" alt="LOSER">
-        <div class="btn" id = "bcktowinner">
+        <img src="./assets/img/win.gif" alt="LOSER">
+        <div class="btn" id="bcktowinner">
             Back to Home
         </div>
     </section>
-    <section class = "loser-chall">   
-        <h1>  
+    <section class="loser-chall banner">
+        <h1>
             <span style="color: rgb(138, 17, 17)">LLLLOOOSSSSSEEERRRR</span>!
         </h1>
-        <img src = "./assets/img/lose.gif" alt="LOSER">
-        <div class="btn" id = "back-chall">
+        <img src="./assets/img/lose.gif" alt="LOSER">
+        <div class="btn" id="back-chall">
             Try again, Loser?
         </div>
     </section>
-    <section class = "winner-chall">   
-        <h1> LUCKILY, YOU 
+    <section class="winner-chall banner">
+        <h1> LUCKILY, YOU
             <span style="color: rgb(18, 110, 6)">passed</span>!
         </h1>
-        <img src = "./assets/img/win.gif" alt="LOSER">
-        <div class="btn" id = "next-chall">
+        <img src="./assets/img/win.gif" alt="LOSER">
+        <div class="btn" id="next-chall">
             Next level, idol?
         </div>
     </section>
 
-    <section class = "final-chall">   
-        <h1> OHHHHHHH, YOU 
+    <section class="final-chall">
+        <h1> OHHHHHHH, YOU
             <span style="color: rgb(18, 110, 6)">WINNNNNNNNNNNNN!</span>!
         </h1>
-        <img src = "./assets/img/final.gif" alt="LOSER">
-        <div class="btn" id = "end-chall">
+        <img src="./assets/img/final.gif" alt="LOSER">
+        <div class="btn" id="end-chall">
             Again, Miss Memory Card?
         </div>
     </section>
@@ -219,28 +244,23 @@
     <section class="round-count">
         2/15
     </section>
-    <section class="ff">
+    <section class="ff banner">
         <span> なに </span>
         <span>Are you sure?</span>
-            <div class="buttom-choose">
-                <div class="btn" id = "ff-go">
-                    Yes
-                </div>
-                <div class="btn" id = "ff-back">
-                    No
-                </div>
+        <div class="buttom-choose">
+            <div class="btn" id="ff-go">
+                Yes
             </div>
+            <div class="btn" id="ff-back">
+                No
+            </div>
+        </div>
     </section>
     <section class="feedback">
-        <a href="https://taekinotaking.github.io/profile/#contact-container" target="_blank">FEEDBACK </a>
+        <a href="https://zhaospei.github.io/" target="_blank">FEEDBACK </a>
     </section>
     <!-- MAIN JS -->
     <script src="./assets/js/main.js"></script>
-    <script src=
-        "./particles.js">
-    </script>
-    <script src=
-        "./demo/js/app.js">
-    </script>
 </body>
+
 </html>

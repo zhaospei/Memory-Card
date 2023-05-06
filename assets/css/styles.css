@@ -16,18 +16,25 @@ body{
     margin: 0;
     background-color: #262435;
     font-family: 'Luckiest Guy', cursive;
-    letter-spacing: 2px;
+
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
     padding: 10px 10px;
 }
-.game-container{
+
+.center-screen{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.game-container {
     width: 1200px;
     height: 575px;
     display: none;
@@ -40,7 +47,48 @@ li{
     align-items: center;
 }
 
-.game-timer{
+.banner {
+    font-size: 16px;
+    color: #262435;
+    position: fixed;
+    width: 500px;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 50px 50px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.banner > h1 {
+    font-size: 40px;
+}
+
+.banner img{
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.menu-banner-content {
+    overflow-y: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.menu-banner-content h3 {
+    font-size: 30px;
+    color:rgb(100 116 139);
+}
+
+.menu-banner-content p {
+    font-size: 24px;
+    text-indent: 20px;
+    color:rgb(148 163 184);
+}
+
+.game-timer {
     width: 250px;
     height: 300px;
     display: none;
@@ -55,7 +103,7 @@ li{
     align-items: center;
 }
 
-.timer, .timer-info{
+.timer, .timer-info {
     height: 50px;
     display: flex;
     color: white;
@@ -67,11 +115,11 @@ li{
     margin-bottom: 20px;
 }
 
-.timer{
+.timer {
     font-size: 40px;
 }
 
-.icon-block{
+.icon-block {
     width: 50px;
     height: 50px;
     background-color:#595292;
@@ -175,55 +223,56 @@ li{
 }
 
 .menu-choose{
-    position: relative;
+    position: fixed;
+    display: none;
     z-index: 100;
     width: 100vw;
     height: 100vh;
 }
 
-.game-tittle{
-    position: absolute;
-    background-color: #2a293500;
-    display: inline-block;
-    width: 100vw;
-    height: 100px;
+.game-title{
+    position: fixed;
+    display: flex;
     color:white;
+    width: 80%;
+    margin: 0 10%;
+    padding: 10px 0;
     font-size: 50px;
     text-transform: uppercase;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.name-tittle{
-    position: absolute;
-    left: 100px;
-    width: 500px;
+.name-title{
+    position: relative;
 }
 
-.github-tittle{
+.name-title::before {
     position: absolute;
-    top: 20px;
-    right: 0px;
-    width: 500px;
+    color: rgb(148 163 184);
+    top: 4px;
+    left: 4px;
+    width: 100%;
+    height: 100%;
+    content: "Memory Card";
 }
-.name-tittle .sub-tittle{
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    color: #ccc;
-}
-.github-tittle{
+
+.github-title{
     font-size: 25px;
 }
 
-.github-tittle .sub-tittle{
-    font-size: 20px;
-    color:#ccc;
+.github-title > a {
+    display: inline-block;
+    color: tomato;
 }
 
-.menu{
-    position: absolute;
+.github-title .sub-title{
+    font-size: 16px;
+    color:rgb(251 191 36);
+    text-align: right;
+}
+
+.menu {
     top: 150px;
-    left: 500px;
     width: 500px;
     height: 500px;
     background-color: #262435;
@@ -237,6 +286,27 @@ li{
     border-color: white;
     border-radius: 20px;
 }
+
+.menu-btn {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+    color: #7f8c8d;
+    background-color: white;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.menu-btn:hover{
+    color: white; 
+}
+
 .btn {
     display: inline-block;
     width: max-content;
@@ -250,33 +320,36 @@ li{
     padding: 10px 30px;
     text-transform: uppercase;
     cursor: pointer;
+    word-wrap: break-word;
 }
 
 .btn:hover{
     background-color: #7f8c8d;
     color: white; 
 }
+
 .deck .card.match {
     visibility: hidden;
     transition: visibility 0.1s linear;
 }
 
-.op-container{
+.menu-banner {
     position: absolute;
-    z-index: 10;
-    top: 200px;
-    left: 550px;
-    width: 400px;
-    height: 400px;
+    width: 90%;
+    height: 90%;
     background-color: white;
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     padding: 50px 50px;
     border-radius: 20px;
     color: #262435;
     font-size: 30px;
+}
+
+.op-container{
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -290,11 +363,22 @@ li{
 .sizeOp, .diffOp{
     display: flex;
     justify-content: space-between;
-    width: 300px;
-    height: 100px;
+    width: 100%;
     margin-bottom: 15px;
     font-size: 25px;
 }
+
+.sizeOp_item, .diffOp_item {
+    padding: 0 0 0 10%;
+}
+
+.buttom-choose {
+    display:  flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #bcktoMenu{
     background-color:#7f8c8d;
     color: white;
@@ -334,21 +418,10 @@ li{
 }
 
 .htp-container{
-    position: absolute;
     z-index: 11;
-    top: 200px;
-    left: 550px;
-    width: 400px;
-    height: 400px;
-    background-color: white;
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
 }
 
 
@@ -359,7 +432,7 @@ li{
     margin-bottom: 30px;
 }
 
-.htp-main h2{
+/* .htp-main h2{
     font-size: 23px;
     color: #7F8C8D;
     margin-bottom: 10px;
@@ -369,7 +442,7 @@ li{
     font-size: 20px;
     margin-bottom: 10px;
     color: #B3BABB;
-}
+} */
 
 #ok-menu{
     background-color:#7f8c8d;
@@ -380,21 +453,10 @@ li{
 }
 
 .about-container{
-    position: absolute;
     z-index: 11;
-    top: 200px;
-    left: 550px;
-    width: 400px;
-    height: 400px;
-    background-color: white;
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
 }
 
 
@@ -412,9 +474,20 @@ li{
     text-align: center;
 }
 
+.about-main a {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .about-main img{
-    margin-left: 90px;
     border-radius: 50%;
+}
+
+.about-link {
+    display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 #bcktoHome{
@@ -441,30 +514,13 @@ li{
 }
 
 .loser{
-    position: absolute;
     z-index: 10000;
-    top: 150px;
-    left: 500px;
-    width: 500px;
-    height: 500px;
-    background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
-
 }
 
-.loser img{
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 400px;
-}
 
 #bcktoloser{
     background-color: #ccc;
@@ -476,28 +532,11 @@ li{
 }
 
 .winner{
-    position: absolute;
     z-index: 10000;
-    top: 150px;
-    left: 500px;
-    width: 500px;
-    height: 500px;
-    background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
-
-}
-
-.winner img{
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 300px;
 }
 
 #bcktowinner{
@@ -617,21 +656,10 @@ li{
 }
 
 .ranking-container{
-    position: absolute;
     z-index: 1000000000;
-    top: 200px;
-    left: 550px;
-    width: 400px;
-    height: 400px;
-    background-color: white;
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 25px;
 }
 
 .ranking-container span{
@@ -664,21 +692,10 @@ li{
 }
 
 .chall-container{
-    position: absolute;
     z-index: 100;
-    top: 200px;
-    left: 550px;
-    width: 400px;
-    height: 400px;
-    background-color: white;
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
 }
 
 
@@ -709,32 +726,11 @@ li{
 }
 
 .loser-chall{
-    position: absolute;
     z-index: 10000;
-    top: 150px;
-    left: 500px;
-    width: 500px;
-    height: 500px;
-    background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
-}
-
-.loser-chall img{
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 400px;
-}
-
-.loser-chall h1{
-    font-size: 37px;
 }
 
 #back-chall{
@@ -748,32 +744,11 @@ li{
 }
 
 .winner-chall{
-    position: absolute;
     z-index: 10000;
-    top: 150px;
-    left: 500px;
-    width: 500px;
-    height: 500px;
-    background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 30px;
-
-}
-
-.winner-chall img{
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 300px;
-}
-
-.winner-chall h1{
-    font-size: 37px;
 }
 
 #next-chall{
@@ -836,18 +811,11 @@ li{
 }
 
 .ff{
-    position: absolute;
     z-index: 1000000;
-    top: 200px;
-    left: 550px;
-    width: 400px;
-    height: 300px;
-    background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
     border-radius: 20px;
     color: #262435;
     font-size: 30px;
@@ -899,28 +867,32 @@ li{
 }
 
 .hello{
-    position: absolute;
     z-index: 10000;
-    top: 150px;
-    left: 450px;
-    width: 600px;
-    height: 500px;
-    background-color: white;
     display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 50px;
-    border-radius: 20px;
-    color: #262435;
-    font-size: 16px;
 }
 
+.hello .hello-content {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.hello .hello-content > h3 {
+    font-size: 32px;
+    color: #595292;
+    text-align: center;
+    margin-bottom: 8px;
+}
 
 .hello > span{
     color:teal;
     font-size: 40px;
-    text-transform: uppercase;
+    
     margin-bottom: 30px;
 }
 
@@ -934,20 +906,89 @@ li{
     color: white;
 }
 
+
 .feedback{
-    position: absolute;
-    z-index: 10000;
-    bottom: 0px;
-    right: 2px;
+    position: fixed;
+    background-color: #3b3566;
+    color: #ffff;
     width: 150px;
     height: 30px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 5px;
-    border-radius: 10px;
-    color: #262435;
     font-size: 20px;
+    z-index: 10000;
+    bottom: 0px;
+    right: 0;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 10px 10px 0 0;
+}
+
+.feedback > a {
+    color: #ffff;
+}
+
+
+
+@media only screen and (max-width:768px) {
+    .game-title {
+        font-size: 32px;
+        flex-direction: column;
+    }
+
+    .banner {
+        top: 200px;
+    }
+    
+    .banner {
+        max-width: 90%;
+        padding: 5% 5%;
+    }
+
+    .banner > h1 {
+        font-size: 32px;
+    }
+
+    .banner img {
+        max-width: 90%;
+    }
+
+    .btn {
+        max-width: 90%;
+        font-size: 24px;
+    }
+
+    .menu {
+        max-width: 90%;
+        padding: 5% 5%;
+    }
+    
+    .menu-btn {
+        max-width: 90%;
+        font-size: xx-large;
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    .menu-btn {
+        font-size: xx-large;
+    }
+}
+
+@media only screen and (max-width:524px) {
+    .menu {
+        padding: 0 0 ;
+    }
+
+    .menu-banner {
+        padding: 5% 5%;
+    }
+
+    .sizeOp, .diffOp {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .rangebtn {
+        width: 100%;
+    }
 }
